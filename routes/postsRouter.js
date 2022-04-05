@@ -1,16 +1,16 @@
 import { Router } from "express";
+import {
+  getAllPosts,
+  getSinglePost,
+  deletePost,
+  createPost,
+  updatePost,
+} from "./posts.js";
 
 const postsRouter = Router();
 
-postsRouter
-  .route("/")
-  .get((req, res) => res.send("GET all  posts"))
-  .post((req, res) => res.send("POST a post"));
+postsRouter.route("/").get(getAllPosts).post(createPost);
 
-postsRouter
-  .route("/:id")
-  .get((req, res) => res.send("GET a single post"))
-  .put((req, res) => res.send("PUT a single post"))
-  .delete((req, res) => res.send("DELETE a single post"));
+postsRouter.route("/:id").get(getSinglePost).put(updatePost).delete(deletePost);
 
-  export default postsRouter;
+export default postsRouter;
