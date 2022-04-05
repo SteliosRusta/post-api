@@ -40,15 +40,16 @@ export const getSinglePost = async (req, res) => {
 
 export const createPost = async (req, res) => {
   try {
+    console.log(req.file, req.body);
     const {
-      body: { title, paragraph, image, author },
+      body: { title, paragraph, author },
     } = req;
-    if (!title || !paragraph || !image || !author) {
+    if (!title || !paragraph || !author) {
       throw new Error("Invalid body");
     }
     const query =
-      "INSERT INTO posts (title,paragraph,image,author) VALUES($1, $2, $3, $4) RETURNING *";
-    const values = [title, paragraph, image, author];
+      "INSERT INTO posts (title,paragraph,author) VALUES($1, $2, $3) RETURNING *";
+    const values = [title, paragraph, author];
     const {
       rows: [newPost],
     } = await pool.query(query, values);
