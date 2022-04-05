@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/SteliosRusta/post-api#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
     "kill-port": "^1.6.1",
