@@ -48,8 +48,8 @@ export const createPost = async (req, res) => {
       throw new Error("Invalid body");
     }
     const query =
-      "INSERT INTO posts (title,paragraph,author) VALUES($1, $2, $3) RETURNING *";
-    const values = [title, paragraph, author];
+      "INSERT INTO posts (title,paragraph,image,author) VALUES($1, $2, $3, $4) RETURNING *";
+    const values = [title, paragraph, req.file.filename, author];
     const {
       rows: [newPost],
     } = await pool.query(query, values);

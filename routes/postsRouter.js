@@ -13,7 +13,7 @@ const postsRouter = Router();
 postsRouter
   .route("/")
   .get(getAllPosts)
-  .post(UploadImage.single("avatar"), createPost);
+  .post(UploadImage.single("image"), createPost);
 
 postsRouter.route("/:id").get(getSinglePost).put(updatePost).delete(deletePost);
 
