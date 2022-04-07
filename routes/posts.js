@@ -71,7 +71,7 @@ export const deletePost = async (req, res) => {
     if (rowCount) {
       return res.json({ msg: `Post with id of ${id} was deleted!` });
     } else {
-      throw new Error("Post doesnt exist.");
+      throw new Error("Post doesn't exist.");
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -90,7 +90,7 @@ export const updatePost = async (req, res) => {
       [id]
     );
     if (!found) {
-      throw new Error("The POST doesnt exist");
+      throw new Error("The POST doesn't exist");
     }
     if (!title || !paragraph || !image || !author) {
       throw new Error("Invalid body");

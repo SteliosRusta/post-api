@@ -1,5 +1,4 @@
 import express from "express";
-import res from "express/lib/response.js";
 import postsRouter from "./routes/postsRouter.js";
 import cors from "cors";
 import { resolve } from "path";
