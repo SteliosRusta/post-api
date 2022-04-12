@@ -56,7 +56,7 @@ export const createPost = async (req, res) => {
     res
       .status(201)
       .send(
-        `<h1>Your post was successfully created</h1><a href='http://localhost:3000'></a>`
+        `<h1>Your post was successfully created</h1><a href='http://localhost:3000'>Go to home page</a>`
       );
   } catch (error) {
     res.status(500).json({ error: error.message });
