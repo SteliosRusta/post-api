@@ -53,7 +53,11 @@ export const createPost = async (req, res) => {
     const {
       rows: [newPost],
     } = await pool.query(query, values);
-    res.status(201).json(newPost);
+    res
+      .status(201)
+      .send(
+        `<h1>Your post was successfully created</h1><a href='http://localhost:3000'></a>`
+      );
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
